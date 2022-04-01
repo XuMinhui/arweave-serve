@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "tsc && node dist/index.js",
-      "serve": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./src/app.ts"  
+    "start": "tsc && node dist/index.js",
+    "serve": "nodemon --watch src/**/* -e ts,tsx --exec ts-node ./src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,8 +13,10 @@
   "dependencies": {
     "@types/koa": "^2.13.4",
     "@types/koa-router": "^7.4.4",
+    "@types/nodemon": "^1.19.1",
     "arweave": "^1.10.23",
     "koa": "^2.13.4",
+    "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
     "nodemon": "^2.0.15",
     "ts-node": "^10.7.0",
