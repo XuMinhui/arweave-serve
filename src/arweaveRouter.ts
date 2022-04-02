@@ -24,7 +24,7 @@ arweaveRouter.post('/upload', (ctx, next) => {
         const upStream = fs.createWriteStream(filePath);
         render.pipe(upStream);
         ctx.state.filePath = filePath
-        console.log(file.type)
+        // console.log(file.type)
         ctx.state.fileType = file.type
         ctx.body = {}
         resolve(next())
@@ -40,7 +40,9 @@ arweaveRouter.post('/upload', (ctx, next) => {
         })
     })
 }, (ctx) => {
-    fs.unlinkSync(ctx.state.filePath)
+    if(!ctx.request.body.save){
+        fs.unlinkSync(ctx.state.filePath)
+    }
     ctx.body.code = 200
     ctx.body.msg = 'upload success'
 })
